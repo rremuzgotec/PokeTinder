@@ -13,7 +13,6 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding
 
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, LoginActivity::class.java))
-            startActivity(Intent(this, RegisterActivity::class.java))
             finish()
         }, 3000)
     }

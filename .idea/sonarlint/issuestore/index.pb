@@ -140,3 +140,9 @@ w
 G.idea/sonarlint/issuestore/b/0/b042dc8a5d21db811306c2667879222957c9590e,0\c\0c13f0816ba4a5e8eb3e88d7e2851a18a1998617
 w
 G.idea/sonarlint/issuestore/e/9/e97643e870553d030e6259c0e020ce6f63ab71c0,e\c\ec6da592710278b1aafd78b1d8d515c818687a97
+€
+Papp/src/main/java/com/renzo/remuzgo/poketinder/ui/viewmodel/FavoriteViewModel.kt,e\e\ee69bec5056e02442fe1867cec0a643e0b2637a2
+|
+Lapp/src/main/java/com/renzo/remuzgo/poketinder/ui/viewmodel/InfoViewModel.kt,6\0\602b71c192a32d8f7775a954b3dbd09fe4997281
+x
+Happ/src/main/java/com/renzo/remuzgo/poketinder/adapter/PokemonAdapter.kt,7\a\7a36ea066d2970479e8fc8d19b4ebc2c2097a6ab

@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.renzo.remuzgo.poketinder.ui.view.InfoFragment"
+        android:name="com.renzo.remuzgo.poketinder.ui.view.HomeFragment"
         android:label="Inicio"
         tools:layout="@layout/fragment_home" />
 

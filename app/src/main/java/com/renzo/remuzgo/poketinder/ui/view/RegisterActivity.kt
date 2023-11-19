@@ -8,39 +8,55 @@ import com.renzo.remuzgo.poketinder.ui.viewmodel.RegisterViewModel
 
 
 class RegisterActivity : BaseActivity<ActivityRegisterBinding>(ActivityRegisterBinding::inflate) {
+
     private lateinit var registerViewModel: RegisterViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding.btnRegister.setOnClickListener {
-            startRegister()
+            startRegistration()
+        }
+        binding.btnGoLogin.setOnClickListener {
+            navigateLogin()
         }
 
         registerViewModel = RegisterViewModel(this)
 
         registerViewModel.onCreate()
 
-        registerViewModel.emptyFieldsError.observe(this) {
-            Toast.makeText(this, "Ingrese datos del nuevo usuario", Toast.LENGTH_SHORT).show()
+        registerViewModel.registrationSuccess.observe(this){
+            Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show()
+            navigateLogin()
         }
 
-        registerViewModel.fieldsAuthenticateError.observe(this) {
-            Toast.makeText(this, "Error de autenticación", Toast.LENGTH_SHORT).show()
+        registerViewModel.emptyFieldsError.observe(this){
+            showEmptyFieldsAlert()
         }
 
-        registerViewModel.goSuccessActivity.observe(this) {
-            if (it) {
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-            }
+        registerViewModel.invalidEmailError.observe(this){
+            showInvalidEmail()
         }
     }
 
-    fun startRegister() {
-        registerViewModel.validateInputs(
-            binding.edtEmail.text.toString(),
-            binding.edtPassword.text.toString()
-        )
+    fun startRegistration(){
+        val userId = "1"
+        val userName = binding.edtUserName.text.toString()
+        val email = binding.edtEmail.text.toString()
+        val password = binding.edtPassword.text.toString()
+
+        registerViewModel.registerUser(userId,userName,email,password)
+    }
+
+    fun navigateLogin(){
+        startActivity(Intent(this, LoginActivity::class.java))
+    }
+
+    fun showEmptyFieldsAlert(){
+        Toast.makeText(this, "Ingrese los datos", Toast.LENGTH_SHORT).show()
+    }
+
+    fun showInvalidEmail(){
+        Toast.makeText(this, "Ingresa un correo valido", Toast.LENGTH_SHORT).show()
     }
 }

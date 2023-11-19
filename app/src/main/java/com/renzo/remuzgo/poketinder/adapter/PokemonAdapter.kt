@@ -1,4 +1,4 @@
-package com.renzo.remuzgo.poketinder.ui.adapter
+package com.renzo.remuzgo.poketinder.adapter
 
 import android.view.LayoutInflater
 import android.view.View

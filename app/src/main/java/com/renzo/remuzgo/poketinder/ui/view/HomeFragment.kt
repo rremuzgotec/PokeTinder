@@ -9,7 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DefaultItemAnimator
 import com.renzo.remuzgo.poketinder.data.model.PokemonResponse
 import com.renzo.remuzgo.poketinder.databinding.FragmentHomeBinding
-import com.renzo.remuzgo.poketinder.ui.adapter.PokemonAdapter
+import com.renzo.remuzgo.poketinder.adapter.PokemonAdapter
 import com.renzo.remuzgo.poketinder.ui.viewmodel.HomeViewModel
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener

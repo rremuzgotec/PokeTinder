@@ -11,7 +11,7 @@ class LoginViewModel(private val context: Context): ViewModel() {
     private lateinit var sharedPreferenceUtil: SharedPreferenceUtil
 
     val emptyFieldsError = MutableLiveData<Boolean>()
-    val fieldsAuthenticationError = MutableLiveData<Boolean>()
+    val fieldAuthenticateError = MutableLiveData<Boolean>()
     val goSuccesActivity = MutableLiveData<Boolean>()
 
     fun onCreate() {
@@ -21,16 +21,16 @@ class LoginViewModel(private val context: Context): ViewModel() {
     }
 
     fun validateInputs(email: String, password: String) {
-        if (email.isEmpty() && password.isEmpty()) {
+        if (email.isEmpty() && password.isEmpty()){
             emptyFieldsError.postValue(true)
         }
 
         val user: User? = sharedPreferenceUtil.getUser()
 
-        if (email == user?.email && password == user?.password) {
+        if (email == user?.email && password == user?.password){
             goSuccesActivity.postValue(true)
         } else {
-            fieldsAuthenticationError.postValue(true)
+            fieldAuthenticateError.postValue(true)
         }
     }
 }
