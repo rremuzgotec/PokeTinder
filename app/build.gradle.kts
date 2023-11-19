@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -36,6 +38,16 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+    kotlin {
+        jvmToolchain {
+            languageVersion.set(JavaLanguageVersion.of(8))
+        }
+        // Or shorter:
+        jvmToolchain(8)
+
+    }
+
 }
 
 dependencies {
@@ -48,14 +60,10 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
-    val roomVersion = "2.3.0"
     val http3Version = "4.9.0"
     val retrofit2Version = "2.9.0"
     val gsonVersion = "2.8.7"
     val glideVersion = "4.12.0"
-    val hiltVersion = "2.41"
-    val navigationVersion = "2.4.2"
-    val fragmentVersion = "1.4.1"
 
     // Retrofit
     implementation("com.google.code.gson:gson:$gsonVersion")
@@ -75,6 +83,12 @@ dependencies {
     //Navigation
     implementation ("androidx.navigation:navigation-fragment:2.5.3")
     implementation ("androidx.navigation:navigation-ui:2.5.3")
+
+    // Room
+    val room_version = "2.4.3"
+    implementation ("androidx.room:room-runtime:$room_version")
+    kapt ("androidx.room:room-compiler:$room_version")
+    implementation ("androidx.room:room-ktx:$room_version")
 
 
 }

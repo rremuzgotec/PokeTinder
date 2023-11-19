@@ -15,6 +15,9 @@
         android:theme="@style/Base.Theme.PokeTinder"
         tools:targetApi="31">
         <activity
+            android:name=".sdk"
+            android:exported="false" />
+        <activity
             android:name=".ui.view.InfoFragment"
             android:exported="false" />
         <activity
